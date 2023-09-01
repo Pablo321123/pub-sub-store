@@ -1,3 +1,4 @@
+const { Console } = require('console')
 const RabbitMQService = require('./rabbitmq-service')
 const path = require('path')
 
@@ -24,7 +25,9 @@ async function printReport() {
 }
 
 async function consume() {
-    //TODO: Constuir a comunicação com a fila 
+    console.log(`REPORT GERADO: ${process.env.RABBITMQ_QUEUE_NAME}`)
+    await (await RabbitMQService.getInstance()).consume(process.env.RABBITMQ_QUEUE_NAME, (products) => {updateReport(product)})
+    await (await RabbitMQService.getInstance()).consume(process.env.RABBITMQ_QUEUE_NAME, printReport())
 } 
 
 consume()

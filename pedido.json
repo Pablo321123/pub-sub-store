@@ -1,0 +1,23 @@
+{
+    "name": "Thiago Finch",
+    "email": "thigo@gmail.com",
+    "cpf": "176.696.460-55",
+    "creditCard": {
+        "number": "5362 6450 6153 1896",
+        "securityNumber": "672"
+    },
+    "products": [
+        {
+            "name": "Porsher",
+            "value": "1000000"
+        }
+    ],
+    "address": {
+        "zipCode": "35930-460",
+        "street": "Rua Beira-Rio",
+        "number": "93",
+        "neighborhood": "Centro Industrial",
+        "city": "João Monlevade",
+        "state": "MG"
+    }
+}

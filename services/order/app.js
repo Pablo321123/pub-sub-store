@@ -25,6 +25,10 @@ async function processMessage(msg) {
             })
 
             await (await RabbitMQService.getInstance()).send('shipping', orderData)
+            
+            await (await RabbitMQService.getInstance()).send('report', orderData.products)
+            await (await RabbitMQService.getInstance()).consume('report')
+
             console.log(`✔ PEDIDO APROVADO`)
         } else {
             await (await RabbitMQService.getInstance()).send('contact', { 

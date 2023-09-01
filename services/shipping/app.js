@@ -12,6 +12,7 @@ async function processMessage(msg) {
         } else {
             console.log(`X ERROR, WE CAN'T SEND WITHOUT ZIPCODE :'(`)
         }
+        console.log(deliveryData.address)
         await (await RabbitMQService.getInstance()).send('report', deliveryData)
 
     } catch (error) {
